@@ -48,10 +48,6 @@ pi@raspberrypi:~$ sudo raspi-config
 > I2 Change Timezone        Set up timezone to match your location
 > Asia
 > Tokyo
-> 5 Interfacing Options  Configure connections to peripherals
-> P5 I2C         Enable/Disable automatic loading of I2C kernel module
-> Would you like the ARM I2C interface to be enabled? <Yes>
-> Ok
 > Finish
 pi@raspberrypi:~$ ip a
 2: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
@@ -60,12 +56,31 @@ pi@raspberrypi:~$ ip a
 pi@raspberrypi:~$ sudo apt update
 pi@raspberrypi:~$ sudo apt upgrade -y
 pi@raspberrypi:~$ sudo reboot
+pi@raspberrypi:~$ sudo apt install -y git python3-pip build-essential
 ~~~
 
 ## Node-REDの設定
+https://nodered.jp/docs/getting-started/raspberrypi を参考に
+
 ~~~
-pi@raspberrypi:~$ sudo apt install -y git
-pi@raspberrypi:~$ sudo apt install -y python3-pip
+pi@raspberrypi:~$ bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+Are you really sure you want to do this ? [y/N] ? y
+Would you like to install the Pi-specific nodes ? [y/N] ? y
+12分かかった
+pi@raspberrypi:~$ sudo systemctl enable nodered
+pi@raspberrypi:~$ sudo systemctl start nodered
+~~~
+
+http://x.x.x.x:1880/ にアクセスして、三本線のパレット管理からnode-red-dashboardのノードを追加
+
+## nfcpy
+python2系列で動かす悪夢
+
+~~~
+pi@raspberrypi:~$ sudo apt install -y python-pip python-dev libusb-dev python-usb
+pi@raspberrypi:~$ sudo pip install -U nfcpy
+pi@raspberrypi:~$ lsusb
+pi@raspberrypi:~$ python -m nfc
 ~~~
 
 
