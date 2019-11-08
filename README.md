@@ -1,5 +1,5 @@
 # raspi-doorlock
-==
+====
 
 ## 必要なもの
 + Raspberry pi Zero WH https://www.switch-science.com/catalog/3646/
@@ -81,7 +81,7 @@ python2系列で動かす悪夢
 
 参考：https://qiita.com/mascii/items/ec79ad5a7026f771d181
 
-![NFC接続](https://github.com/iwax2/raspi-doorlockblob/master/pi0w-nfc.jpg "pi0w-nfc")
+![NFC接続](https://github.com/iwax2/raspi-doorlock/blob/master/pi0w-nfc.jpg "pi0w-nfc")
 
 ~~~
 pi@raspberrypi:~$ sudo apt install -y python-pip python-dev libusb-dev python-usb
