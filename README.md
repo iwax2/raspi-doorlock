@@ -1,4 +1,4 @@
-# raspi-doorlock
+raspi-doorlock
 ====
 
 ## 必要なもの
@@ -72,7 +72,7 @@ pi@raspberrypi:~$ sudo systemctl start nodered
 
 http://x.x.x.x:1880/ にアクセスして、三本線のパレット管理からnode-red-dashboardのノードを追加
 
-![Node-RED Webドアロック](https://github.com/iwax2/raspi-doorlock/blob/master/nodered-webver.png "nodered-webver")
+![Node-RED Webドアロック](https://github.com/iwax2/raspi-doorlock/blob/master/nodered-web.png "nodered-webver")
 
 これでWebブラウザ経由で鍵の開け閉めはできる．
 
