@@ -6,7 +6,7 @@
 + microSDカード（32GBまで） https://www.dospara.co.jp/5shopping/detail_parts.php?bg=7&br=219&sbr=1043&ic=369719&lf=0
 + 変換名人 USBMCH-20LL（100均でも買えます） https://www.yodobashi.com/product/100000001003247877/
 + NFCリーダ Sony RC-S380 https://kakaku.com/item/K0000426530/
-+ microUSBケーブル http://akizukidenshi.com/catalog/g/gC-07607/
++ microUSBケーブル（100均のでもOK） http://akizukidenshi.com/catalog/g/gC-09314/
 + 360°サーボ http://akizukidenshi.com/catalog/g/gM-01723/
 
 ## Raspbianのダウンロード
@@ -21,12 +21,11 @@ http://ftp.jaist.ac.jp/pub/raspberrypi/raspbian_lite/images/
 書き込んだbootドライブのconfig.txtの最終行に追記
 `dtoverlay=pi3-miniuart-bt`
 
-https://www.usagi1975.com/201907061439/
+参考：https://www.usagi1975.com/201907061439/
 
 ## シリアル接続
 USBシリアルモジュールのTX、RX、GNDを写真のようにpi0wと接続する。
 シリアルモジュールのTXとpi0wのRX（10ピン）、シリアルモジュールのRXとpi0wのTX（8ピン）を接続することに注意。
-doiboardとFT231Xを接続する場合は自動で接続されます。
 
 ![シリアル接続](https://github.com/iwax2/raspi-fiap/blob/master/pi0w-serial.jpg "pi0w-serial")
 
@@ -72,6 +71,8 @@ pi@raspberrypi:~$ sudo systemctl start nodered
 ~~~
 
 http://x.x.x.x:1880/ にアクセスして、三本線のパレット管理からnode-red-dashboardのノードを追加
+
+![Node-RED Webドアロック](https://github.com/iwax2/raspi-doorlock/blob/master/nodered-webver.png "nodered-webver")
 
 これでWebブラウザ経由で鍵の開け閉めはできる．
 
