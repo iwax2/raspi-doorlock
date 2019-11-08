@@ -73,14 +73,26 @@ pi@raspberrypi:~$ sudo systemctl start nodered
 
 http://x.x.x.x:1880/ にアクセスして、三本線のパレット管理からnode-red-dashboardのノードを追加
 
+これでWebブラウザ経由で鍵の開け閉めはできる．
+
 ## nfcpy
+FeLiCaでドア開けたいよね．開けたくない？
 python2系列で動かす悪夢
+
+参考：https://qiita.com/mascii/items/ec79ad5a7026f771d181
+
+![NFC接続](https://github.com/iwax2/raspi-doorlockblob/master/pi0w-nfc.jpg "pi0w-nfc")
 
 ~~~
 pi@raspberrypi:~$ sudo apt install -y python-pip python-dev libusb-dev python-usb
-pi@raspberrypi:~$ sudo pip install -U nfcpy
+pi@raspberrypi:~$ sudo pip install -U nfcpy nfcpy-id-reader
 pi@raspberrypi:~$ lsusb
+pi@raspberrypi:~$ python -m nfc
+pi@raspberrypi:~$ sudo sh -c 'echo SUBSYSTEM==\"usb\", ACTION==\"add\", ATTRS{idVendor}==\"054c\", ATTRS{idProduct}==\"06c3\", GROUP=\"plugdev\" >> pi@raspberrypi:~$ /etc/udev/rules.d/nfcdev.rules'
+sudo udevadm control -R # then re-attach device
+pi@raspberrypi:~$ sudo reboot
 pi@raspberrypi:~$ python -m nfc
 ~~~
 
-
+node-red-contrib-nfcpy-idノードを追加して，
+入力グループのnfcpy idノードを追加してプログラミング
