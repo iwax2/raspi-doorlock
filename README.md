@@ -55,7 +55,7 @@ pi@raspberrypi:~$ ip a
 pi@raspberrypi:~$ sudo apt update
 pi@raspberrypi:~$ sudo apt upgrade -y
 pi@raspberrypi:~$ sudo reboot
-pi@raspberrypi:~$ sudo apt install -y git python3-pip build-essential
+pi@raspberrypi:~$ sudo apt install -y git python3-pip build-essential vim
 ~~~
 
 ## Node-REDの設定
@@ -97,3 +97,20 @@ pi@raspberrypi:~$ python -m nfc
 
 node-red-contrib-nfcpy-idノードを追加して，
 入力グループのnfcpy idノードを追加してプログラミング
+
+なんかXperia XZ3のIDmが08000000しか見れなくてむーりー
+
+~~~
+pi@raspberrypi:~$ sudo pip3 install -U nfcpy ndef
+pi@raspberrypi:~$ python3 -m nfc
+pi@raspberrypi:~$ git clone https://github.com/nfcpy/nfcpy.git
+pi@raspberrypi:~$ cd nfcpy/examples
+pi@raspberrypi:~/nfcpy/examples $ python3 tagtool.py
+
+
+
+pi@raspberrypi:~$ 
+pi@raspberrypi:~$ 
+pi@raspberrypi:~$ 
+~~~
+
